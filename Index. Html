@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Trading Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #price {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Simple Trading Website</h1>
+<p>Current Price: $<span id="price">0.00</span></p>
+<button onclick="buy()">Buy</button>
+<button onclick="sell()">Sell</button>
+
+<script>
+    // Simulating price changes
+    setInterval(updatePrice, 5000);
+
+    function updatePrice() {
+        // Simulating random price changes
+        const newPrice = (Math.random() * (1000 - 500) + 500).toFixed(2);
+        document.getElementById('price').innerText = newPrice;
+    }
+
+    function buy() {
+        const currentPrice = parseFloat(document.getElementById('price').innerText);
+        alert('You bought at $' + currentPrice.toFixed(2));
+    }
+
+    function sell() {
+        const currentPrice = parseFloat(document.getElementById('price').innerText);
+        alert('You sold at $' + currentPrice.toFixed(2));
+    }
+</script>
+
+</body>
+</html>
